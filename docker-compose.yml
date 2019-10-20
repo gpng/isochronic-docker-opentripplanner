@@ -1,0 +1,22 @@
+version: '3.7'
+
+services:
+  opentripplanner:
+    image: urbica/otp:latest
+    container_name: opentripplanner
+    restart: always
+    entrypoint:
+      - otp
+      - --build
+      - /data
+      - --pointSets
+      - /data
+      - --inMemory
+      - --server
+      - --analyst
+    volumes:
+      - ./data:/data:ro
+    ports:
+      - 8080:8080
+    environment:
+      - JAVA_MX=4G
