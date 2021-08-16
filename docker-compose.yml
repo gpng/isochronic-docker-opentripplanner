@@ -1,4 +1,4 @@
-version: '3.7'
+version: "3.7"
 
 services:
   opentripplanner:
@@ -17,6 +17,6 @@ services:
     volumes:
       - ./data:/data:ro
     ports:
-      - 8080:8080
+      - 5000:8080
     environment:
       - JAVA_MX=4G
